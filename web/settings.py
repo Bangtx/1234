@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'web.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'db',
         'HOST': 'ec2-52-6-211-59.compute-1.amazonaws.com',
         'USER': 'bang',
