@@ -8,26 +8,10 @@ from .my_function import *
 
 class myweb:
 
-        #     def __init__(self):
-        #         self.all_category = category.objects.all()
-        #         self.all_category_name = [cate.category_name for cate in self.all_category]
-        #         for i in list_category_must_insert:
-        #             if not is_exists(i['category_name'], self.all_category_name):
-        #                 cate = category(**i)
-        #                 cate.save()
-        #         self.all_category = list(category.objects.all())
-        #         self.all_product = list(product.objects.all())
-        #         self.all_category_mom = get_category_mom(self.all_category)
-        #         self.context = {
-        #             'all_category': self.all_category,
-        #             'all_category_mom': self.all_category_mom,
-        #         }
-        # self.all_category_mom = get_category_mom(self.all_category)
-        # self.all_category_child = get_category_child_of_mom(self.all_category_mom, self.all_category)
-
     def test(self, r):
         self.all_category = category.objects.all()
-        return HttpResponse('ok')
+        self.all_category_name = [cate.category_name for cate in self.all_category]
+        return HttpResponse(self.all_category_name)
 
 #     def index(self, r):
 #         return render(request=r, template_name='home.html', context=self.context)
