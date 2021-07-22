@@ -10,9 +10,7 @@ class myweb:
 
     def __init__(self):
         self.all_category = category.objects.all()
-        self.all_product = list(product.objects.all())
         self.all_category_name = [cate.category_name for cate in self.all_category]
-        self.all_product_name = [prod.product_name for prod in self.all_product]
         for i in list_category_must_insert:
             if not is_exists(i['category_name'], self.all_category_name):
                 cate = category(**i)
