@@ -8,37 +8,54 @@ from .my_function import *
 
 class myweb:
 
-    def test(self, r):
+    def __init__(self):
         self.all_category = category.objects.all()
+        self.all_product = list(product.objects.all())
         self.all_category_name = [cate.category_name for cate in self.all_category]
-        return HttpResponse(self.all_category_name)
+        self.all_product_name = [prod.product_name for prod in self.all_product]
+        for i in list_category_must_insert:
+            if not is_exists(i['category_name'], self.all_category_name):
+                cate = category(**i)
+                cate.save()
+        self.all_category = list(category.objects.all())
+        self.all_product = list(product.objects.all())
+        self.all_category_mom = get_category_mom(self.all_category)
+        self.context = {
+            'all_category': self.all_category,
+            'all_category_mom': self.all_category_mom,
+        }
+        # self.all_category_mom = get_category_mom(self.all_category)
+        # self.all_category_child = get_category_child_of_mom(self.all_category_mom, self.all_category)
 
-#     def index(self, r):
-#         return render(request=r, template_name='home.html', context=self.context)
+    def test(self, r):
+            return HttpResponse(self.all_category)
 
-#     def product(self, r, id):
-#         product_show = list()
-#         for i in self.all_product:
-#             if int(i.category_id) == int(id):
-#                 product_show.append(i)
-#         self.context['all_product'] = product_show
-#         return render(request=r, template_name='products.html', context=self.context)
+    def index(self, r):
+        return render(request=r, template_name='home.html', context=self.context)
 
-#     def product_details(self, r, id):
-#         product_detail = None
-#         for i in self.all_product:
-#             if int(i.id) == int(id):
-#                 product_detail = i
-#         self.context['product_detail'] = product_detail
+    def product(self, r, id):
+        product_show = list()
+        for i in self.all_product:
+            if int(i.category_id) == int(id):
+                product_show.append(i)
+        self.context['all_product'] = product_show
+        return render(request=r, template_name='products.html', context=self.context)
 
-#         print(product_detail)
-#         return render(request=r, template_name='productDetails.html', context=self.context)
+    def product_details(self, r, id):
+        product_detail = None
+        for i in self.all_product:
+            if int(i.id) == int(id):
+                product_detail = i
+        self.context['product_detail'] = product_detail
 
-#     def insert_category_if_not_exit(self):
-#         self.all_category = category.objects.all()
-#         self.all_product = product.objects.all()
-#         self.all_category_name = [cate.category_name for cate in self.all_category]
-#         self.all_product_name = [prod.product_name for prod in self.all_product]
+        print(product_detail)
+        return render(request=r, template_name='productDetails.html', context=self.context)
+
+    def insert_category_if_not_exit(self):
+        self.all_category = category.objects.all()
+        self.all_product = product.objects.all()
+        self.all_category_name = [cate.category_name for cate in self.all_category]
+        self.all_product_name = [prod.product_name for prod in self.all_product]
 
 
 list_category_must_insert = [
