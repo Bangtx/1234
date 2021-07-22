@@ -4,5 +4,5 @@ from . views import myweb
 
 
 urlpatterns = [
-    path('test/', myweb().test, name='test'),
+    path('/test', myweb().test, name='test'),
 ]
