@@ -1,0 +1,283 @@
+{% extends 'index.html' %}
+{% load static %}
+
+<!-- Promotion -->
+{% block home %}
+<!-- Bìa Web -->
+<div class="hero">
+<div class="left">
+  <h1>Nội thất ô tô Modero 86</h1>
+  <h3>Chuyên: Sản xuất & Cung Cấp</h3>
+  <ul class="row_hero">
+    <li><i class="fas fa-hand-point-right"></i> Phân phối phụ kiện nội, ngoại thất chính hãng</li>
+    <li ><i class="fas fa-hand-point-right"></i> Tổng kho cung cấp nguyên vật liệu da</li>
+    <li ><i class="fas fa-hand-point-right"></i> Thảm lót sàn, bọc trần, ghế ngồi</li>
+  </ul>
+  <div class="profit_left">
+    <h4><i class="fas fa-handshake"></i> Tư vấn 24/7 miễn phí</h4>
+    <span>Hỗ trợ nhiệt tình</span>
+    <h4><i class="fas fa-shipping-fast"></i> Giao hàng nhanh chóng</h4>
+    <span>Gọi là có - Kể cả mưa gió</span>
+  </div>
+  <div class="profit_right">
+    <h4><i class="fas fa-phone-square-alt"></i> Kinh doanh đặt hàng</h4>
+    <span>0818966626 - 0988883019 - 0854393111</span>
+    <h4><i class="fas fa-donate"></i> Miễn phí vận chuyển</h4>
+    <span>Miễn phí nội thành</span>
+  </div>
+  <p><i class="fas fa-map-marked-alt"></i> Ngã 3 - Ba La Hà Đông - Hà Nội</p>
+  <a href="products.html">Mua ngay <i class="fas fa-shopping-basket"></i></a>
+</div>
+</div>
+<section class="section promotion">
+<div class="title">
+  <h2>Danh mục Sản Phẩm</h2>
+  <!-- <span>Chọn nhanh danh mục sản phẩm</span> -->
+</div>
+
+<div class="promotion-layout container">
+  <div class="promotion-item">
+    <img src="{% static 'images/promo1.jpg' %}" alt="" />
+    <div class="promotion-content">
+      <h3>TRANG TRÍ BÊN TRONG</h3>
+      <a href="">MUA NGAY</a>
+    </div>
+  </div>
+
+  <div class="promotion-item">
+    <img src="{% static 'images/promo2.jpg' %}" alt="" />
+    <div class="promotion-content">
+      <h3>ĐỒ ĐIỆN CÔNG NGHỆ</h3>
+      <a href="">MUA NGAY</a>
+    </div>
+  </div>
+
+  <div class="promotion-item">
+    <img src="{% static 'images/promo3.jpg' %}" alt="" />
+    <div class="promotion-content">
+      <h3>TRANG TRÍ BÊN NGOÀI</h3>
+      <a href="">MUA NGAY</a>
+    </div>
+  </div>
+
+  <div class="promotion-item">
+    <img src="{% static 'images/promo4.jpg' %}" alt="" />
+    <div class="promotion-content">
+      <h3>SẢN PHẨM CHĂM SÓC</h3>
+      <a href="">MUA NGAY</a>
+    </div>
+  </div>
+
+  <div class="promotion-item">
+    <img src="{% static 'images/promo5.jpg' %}" alt="" />
+    <div class="promotion-content">
+      <h3>PHỤ TÙNG ĐỒ LỌC</h3>
+      <a href="">MUA NGAY</a>
+    </div>
+  </div>
+
+  <div class="promotion-item">
+    <img src="{% static 'images/promo6.jpg' %}" alt="" />
+    <div class="promotion-content">
+      <h3>PHỤ TÙNG MÁY GẦM</h3>
+      <a href="">MUA NGAY</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Products -->
+<section class="section products">
+<div class="title">
+  <h2>Tất Cả Sản Phẩm</h2>
+</div>
+<div class="new_arrivals_sorting">
+  <ul class="arrivals_grid_sorting clearfix button-group">
+      <li class="grid_sorting_button buttob active is-checked"
+          data-filter="*">Tất cả sản phẩm</li>
+      <li class="grid_sorting_button button"
+          data-filter=".interior_decoration">Trang trí bên trong</li>
+      <li class="grid_sorting_button button"
+          data-filter=".tech_electronics">Đồ điện công nghệ</li>
+      <li class="grid_sorting_button button"
+          data-filter=".exterior_decoration">Trang trí bên ngoài</li>
+      <li class="grid_sorting_button button"
+          data-filter=".care_products">Sản phẩm chăm sóc</li>
+      <li class="grid_sorting_button button"
+          data-filter=".filter_spare_parts">Phụ tùng đồ lọc</li>
+      <li class="grid_sorting_button button"
+          data-filter=".chassis_spare_parts">Phụ tùng máy gầm</li>
+  </ul>
+</div>
+<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows"}'>
+
+  <div class="product-layout ">
+    <!-- Product 1 -->
+    <div class="product interior_decoration">
+      <div class="img-container">
+        <img src="{% static 'images/product1.jpg' %}" alt="" />
+        <div class="addCart">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <ul class="side-icons">
+          <span><i class="fas fa-search"></i></span>
+          <span><i class="far fa-heart"></i></span>
+          <span><i class="fas fa-sliders-h"></i></span>
+        </ul>
+      </div>
+      <div class="bottom">
+        <a href="">Nước hoa wine mới</a>
+        <div class="price">
+          <span>150.000đ</span>
+        </div>
+      </div>
+    </div>
+    <!-- Product 2 -->
+    <div class="product interior_decoration">
+      <div class="img-container">
+        <img src="{% static 'images/product2.jpg' %}" alt="" />
+        <div class="addCart">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <ul class="side-icons">
+          <span><i class="fas fa-search"></i></span>
+          <span><i class="far fa-heart"></i></span>
+          <span><i class="fas fa-sliders-h"></i></span>
+        </ul>
+      </div>
+      <div class="bottom">
+        <a href="">Nước hoa wine mới</a>
+        <div class="price">
+          <span>150.000đ</span>
+          <span class="cancel">160.000đ</span>
+        </div>
+      </div>
+    </div>
+    <!-- Product 3 -->
+    <div class="product tech_electronics">
+      <div class="img-container">
+        <img src="{% static 'images/product3.jpg' %}" alt="" />
+        <div class="addCart">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <ul class="side-icons">
+          <span><i class="fas fa-search"></i></span>
+          <span><i class="far fa-heart"></i></span>
+          <span><i class="fas fa-sliders-h"></i></span>
+        </ul>
+      </div>
+      <div class="bottom">
+        <a href="">Nước hoa wine mới</a>
+        <div class="price">
+          <span>150.000đ</span>
+        </div>
+      </div>
+    </div>
+    <!-- Product 4 -->
+    <div class="product tech_electronics">
+      <div class="img-container">
+        <img src="{% static 'images/product4.jpg' %}" alt="" />
+        <div class="addCart">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <ul class="side-icons">
+          <span><i class="fas fa-search"></i></span>
+          <span><i class="far fa-heart"></i></span>
+          <span><i class="fas fa-sliders-h"></i></span>
+        </ul>
+      </div>
+      <div class="bottom">
+        <a href="">Nước hoa wine mới</a>
+        <div class="price">
+          <span>150.000đ</span>
+          <span class="cancel">160.000đ</span>
+        </div>
+      </div>
+    </div>
+    <!-- Product 5 -->
+    <div class="product exterior_decoration">
+      <div class="img-container">
+        <img src="{% static 'images/product5.jpg' %}" alt="" />
+        <div class="addCart">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <ul class="side-icons">
+          <span><i class="fas fa-search"></i></span>
+          <span><i class="far fa-heart"></i></span>
+          <span><i class="fas fa-sliders-h"></i></span>
+        </ul>
+      </div>
+      <div class="bottom">
+        <a href="">Nước hoa wine mới</a>
+        <div class="price">
+          <span>150.000đ</span>
+        </div>
+      </div>
+    </div>
+    <!-- Product 6 -->
+    <div class="product care_products">
+      <div class="img-container">
+        <img src="{% static 'images/product6.jpg' %}" alt="" />
+        <div class="addCart">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <ul class="side-icons">
+          <span><i class="fas fa-search"></i></span>
+          <span><i class="far fa-heart"></i></span>
+          <span><i class="fas fa-sliders-h"></i></span>
+        </ul>
+      </div>
+      <div class="bottom">
+        <a href="">Nước hoa wine mới</a>
+        <div class="price">
+          <span>150.000đ</span>
+        </div>
+      </div>
+    </div>
+    <!-- Product 7 -->
+    <div class="product filter_spare_parts">
+      <div class="img-container">
+        <img src="{% static 'images/product8.jpg' %}" alt="" />
+        <div class="addCart">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <ul class="side-icons">
+          <span><i class="fas fa-search"></i></span>
+          <span><i class="far fa-heart"></i></span>
+          <span><i class="fas fa-sliders-h"></i></span>
+        </ul>
+      </div>
+      <div class="bottom">
+        <a href="">Nước hoa wine mới</a>
+        <div class="price">
+          <span>150.000đ</span>
+          <span class="cancel">160.000đ</span>
+        </div>
+      </div>
+    </div>
+    <!-- Product 8 -->
+    <div class="product chassis_spare_parts">
+      <div class="img-container">
+        <img src="{% static 'images/product9.jpg' %}" alt="" />
+        <div class="addCart">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <ul class="side-icons">
+          <span><i class="fas fa-search"></i></span>
+          <span><i class="far fa-heart"></i></span>
+          <span><i class="fas fa-sliders-h"></i></span>
+        </ul>
+      </div>
+      <div class="bottom">
+        <a href="">Nước hoa wine mới</a>
+        <div class="price">
+          <span>150.000đ</span>
+          <span class="cancel">160.000đ</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+{% endblock %}

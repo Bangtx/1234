@@ -1,0 +1,147 @@
+
+{% extends 'index.html' %}
+{% load static %}
+<!-- Product Details -->
+{% block product-details  %}
+<section class="section product-detail">
+<div class="details container">
+  <div class="left">
+    <div class="main">
+      <img src="{{ product_detail.product_image.url }}" alt="" />
+    </div>
+{#    <div class="thumbnails">#}
+{#      <div class="thumbnail">#}
+{#        <img src="./images/product2.jpg" alt="" />#}
+{#      </div>#}
+{#      <div class="thumbnail">#}
+{#        <img src="./images/product3.jpg" alt="" />#}
+{#      </div>#}
+{#      <div class="thumbnail">#}
+{#        <img src="./images/product4.jpg" alt="" />#}
+{#      </div>#}
+{#      <div class="thumbnail">#}
+{#        <img src="./images/product5.jpg" alt="" />#}
+{#      </div>#}
+{#    </div>#}
+  </div>
+  <div class="right">
+    <span>Trang chủ / Sản phẩm / Trang trí bên trong / Nước hoa</span>
+    <h1>{{ product_detail.product_name }}</h1>
+    <div class="price">{{ product_detail.product_spice }}đ</div>
+    <form>
+      <div>
+        <select>
+          <option value="Select Size" selected disabled>
+            Màu sắc
+          </option>
+          <option value="1">Xanh</option>
+          <option value="2">Đen</option>
+          <option value="3">Vàng</option>
+          <option value="4">Trắng</option>
+        </select>
+        <span><i class="fas fa-chevron-down"></i></span>
+      </div>
+    </form>
+    <form class="form">
+      <input type="text" placeholder="1" />
+      <a href="cart.html" class="addCart">Thêm vào giỏ hàng</a>
+    </form>
+    <h3>Thông tin sản phẩm</h3>
+    <p>
+      {{ product_detail.product_desception }}
+    </p>
+  </div>
+</div>
+</section>
+
+  <!-- Related Products -->
+
+<section class="section related-products">
+<div class="title">
+  <h2>Sản Phẩm Liên Quan</h2>
+</div>
+<div class="product-layout container">
+  <div class="product">
+    <div class="img-container">
+      <img src="{% static 'images/product1.jpg' %}" alt="" />
+      <div class="addCart">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+
+      <ul class="side-icons">
+        <span><i class="fas fa-search"></i></span>
+        <span><i class="far fa-heart"></i></span>
+        <span><i class="fas fa-sliders-h"></i></span>
+      </ul>
+    </div>
+    <div class="bottom">
+      <a href="">Nước hoa wine mới</a>
+      <div class="price">
+        <span>150.000đ</span>
+      </div>
+    </div>
+  </div>
+  <div class="product">
+    <div class="img-container">
+      <img src="{% static 'images/product2.jpg' %}" alt="" />
+      <div class="addCart">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+
+      <ul class="side-icons">
+        <span><i class="fas fa-search"></i></span>
+        <span><i class="far fa-heart"></i></span>
+        <span><i class="fas fa-sliders-h"></i></span>
+      </ul>
+    </div>
+    <div class="bottom">
+      <a href="">Nước hoa wine mới</a>
+      <div class="price">
+        <span>150.000đ</span>
+      </div>
+    </div>
+  </div>
+  <div class="product">
+    <div class="img-container">
+      <img src="./images/product3.jpg" alt="" />
+      <div class="addCart">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+
+      <ul class="side-icons">
+        <span><i class="fas fa-search"></i></span>
+        <span><i class="far fa-heart"></i></span>
+        <span><i class="fas fa-sliders-h"></i></span>
+      </ul>
+    </div>
+    <div class="bottom">
+      <a href="">Nước hoa wine mới</a>
+      <div class="price">
+        <span>150.000đ</span>
+      </div>
+    </div>
+  </div>
+  <div class="product">
+    <div class="img-container">
+      <img src="./images/product4.jpg" alt="" />
+      <div class="addCart">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+
+      <ul class="side-icons">
+        <span><i class="fas fa-search"></i></span>
+        <span><i class="far fa-heart"></i></span>
+        <span><i class="fas fa-sliders-h"></i></span>
+      </ul>
+    </div>
+    <div class="bottom">
+      <a href="">Nước hoa wine mới</a>
+      <div class="price">
+        <span>150.000đ</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+{% endblock %}

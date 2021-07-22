@@ -1,0 +1,219 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo/logo.jpg">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <!-- Glidejs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.css">
+  <!-- Custom StyleSheet -->
+  <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  <title>Nội Thất Xe Hơi Chính Hãng MODERO 86</title>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="wrapper container">
+      <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/logo/logo1.png' %}" ></a></div>
+      <ul class="nav-list">
+        <div class="top">
+          <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+        </div>
+        <li><a href="{% url 'index' %}">Trang chủ</a></li>
+        <li>
+          <a href="products.html" class="desktop-item">Sản Phẩm <span><i class="fas fa-chevron-down"></i></span></a>
+          <input type="checkbox" id="showMega" />
+          <label for="showMega" class="mobile-item">Sản Phẩm <span><i class="fas fa-chevron-down"></i></span></label>
+          {{  x }}
+          <div class="mega-box">
+            <div class="content">
+              {% for category_mon in all_category_mom %}
+                <div class="row">
+                <header>{{ category_mon.category_name }}</header>
+                  <ul class="mega-links">
+                    {% for categoty_child in all_category %}
+                      {% if categoty_child.id_mom == category_mon.id %}
+                        <li><a href="{% url 'product' categoty_child.id %}">{{ categoty_child.category_name }}</a></li>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </li>
+        <li><a href="">Tuyển đại lí - Cộng tác viên</a></li>
+        <li>
+          <a href="" class="desktop-item">Hướng dẫn mua hàng </a>
+          <input type="checkbox">
+          <label class="mobile-item">Hướng dẫn mua hàng</label>
+        </li>
+        <li><a href="">Phương thức giao nhận</a></li>
+        <li>
+          <a href="" class="desktop-item">Page <span><i class="fas fa-chevron-down"></i></span></a>
+          <input type="checkbox" id="showdrop2" />
+          <label for="showdrop2" class="mobile-item">Page <span><i class="fas fa-chevron-down"></i></span></label>
+          <ul class="drop-menu2">
+            <li><a href="">Giới thiệu về chúng tôi</a></li>
+            <li><a href="">Liên hệ với chúng tôi</a></li>
+          </ul>
+        </li>
+        <!-- icons -->
+        <li class="icons">
+          <span>
+            <img src="./images/shoppingBag.svg" alt="" />
+            <small class="count d-flex">0</small>
+          </span>
+          <span><img src="./images/search.svg" alt="" /></span>
+        </li>
+      </ul>
+      <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+
+  <!-- Promotion -->
+
+  {% block home %}
+  {% endblock %}
+  {% block product-details %}
+  {% endblock %}
+
+  <!-- BRANDS -->
+  <section class="section brands">
+    <div class="title">
+      <h2>Thương hiệu</h2>
+    </div>
+
+    <div class="brand-layout container">
+      <div class="glide" id="glide1">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <img src="{% static 'images/brand1.png' %}" alt="">
+            </li>
+            <li class="glide__slide">
+              <img src="{% static 'images/brand2.png' %}" alt="">
+            </li>
+            <li class="glide__slide">
+              <img src="{% static 'images/brand3.png' %}" alt="">
+            </li>
+            <li class="glide__slide">
+              <img src="{% static 'images/brand4.png' %}" alt="">
+            </li>
+            <li class="glide__slide">
+              <img src="{% static 'images/brand5.png' %}" alt="">
+            </li>
+            <li class="glide__slide">
+              <img src="{% static 'images/brand6.png' %}" alt="">
+            </li>
+            <li class="glide__slide">
+              <img src="{% static 'images/brand7.png' %}" alt="">
+            </li>
+            <li class="glide__slide">
+              <img src="{% static 'images/brand8.png' %}" alt="">
+            </li>
+            <li class="glide__slide">
+              <img src="{% static 'images/brand9.png' %}" alt="">
+            </li>
+            <li class="glide__slide">
+              <img src="{% static 'images/brand10.png' %}" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Đăng kí nhận tin -->
+<div class="newsletter">
+  <div class="col-1-nl">
+    <div class="newsletter_text">
+      <h4><i class="fas fa-envelope-open-text"></i> Đăng kí nhận tin</h4>
+      <p>Cập nhật các thông tin khuyến mãi mới nhất</p>
+    </div>
+  </div>
+  <div class="col-2-nl">
+    <form action="post">
+      <div class="newsletter_form">
+        <input id="newsletter_email" type="email" placeholder="Email của bạn" required="required" data-error="Email của bạn không hợp lệ">
+        <button id="newsletter_submit" type="submit" class="newsletter_submit_btn" value="submit">Đăng kí</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer id="footer" class="section footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-center">
+          <h3>EXTRAS</h3>
+          <a href="#">Brands</a>
+          <a href="#">Gift Certificates</a>
+          <a href="#">Affiliate</a>
+          <a href="#">Specials</a>
+          <a href="#">Site Map</a>
+        </div>
+        <div class="footer-center">
+          <h3>INFORMATION</h3>
+          <a href="#">About Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Site Map</a>
+        </div>
+        <div class="footer-center">
+          <h3>MY ACCOUNT</h3>
+          <a href="#">My Account</a>
+          <a href="#">Order History</a>
+          <a href="#">Wish List</a>
+          <a href="#">Newsletter</a>
+          <a href="#">Returns</a>
+        </div>
+        <div class="footer-center">
+          <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
+          <div>
+            <span>
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+            CS1: Ngã 3 - Ba La Hà Đông - Hà Nội <br>CS2: Quận 7 - TP HCM
+          </div>
+          <div>
+            <span>
+              <i class="far fa-envelope"></i>
+            </span>
+            noithatxehoichinhhang@gmail.com
+          </div>
+          <div>
+            <span>
+              <i class="fas fa-phone"></i>
+            </span>
+            0818966626 - 0988883019 - 0854393111
+          </div>
+          <div class="payment-methods">
+            <img src="{% static 'images/payment.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Glidejs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+  <!-- Custom Scripts -->
+  <script src="{% static 'js/products.js' %}"></script>
+  <script src="{% static 'js/slider.js' %}"></script>
+  <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>
